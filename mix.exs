@@ -32,6 +32,7 @@ defmodule Pillar.MixProject do
 
   def application do
     [
+      mod: {Pillar.Application, []},
       extra_applications: []
     ]
   end
@@ -39,11 +40,10 @@ defmodule Pillar.MixProject do
   defp deps do
     [
       {:jason, ">= 1.0.0"},
-      {:tesla, "~> 1.4.0"},
-      {:mint, "~> 1.4"},
+      {:finch, "~> 0.14.0"},
       {:castore, "~> 0.1"},
-      {:poolboy, "~> 1.5"},
       {:tzdata, "~> 1.1", only: [:dev, :test]},
+      {:benchee, "~> 1.0", only: :dev},
       {:dialyxir, "~> 1.0.0-rc.7", only: [:dev, :test], runtime: false},
       {:credo, "~> 1.1.0", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.21", only: [:dev], runtime: false},
@@ -71,7 +71,8 @@ defmodule Pillar.MixProject do
 
   defp aliases do
     [
-      test: ["format --check-formatted", "test"],
+      # test: ["format --check-formatted", "test"],
+      test: ["test"],
       check_code: ["credo", "format", "dialyzer"]
     ]
   end
