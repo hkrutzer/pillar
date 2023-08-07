@@ -40,8 +40,8 @@ defmodule Pillar.MixProject do
   defp deps do
     [
       {:jason, ">= 1.0.0"},
-      {:finch, "~> 0.14.0"},
-      {:castore, "~> 0.1"},
+      {:finch, "~> 0.16"},
+      {:castore, "~> 0.1 or ~> 1.0"},
       {:tzdata, "~> 1.1", only: [:dev, :test]},
       {:benchee, "~> 1.0", only: :dev},
       {:dialyxir, "~> 1.0.0-rc.7", only: [:dev, :test], runtime: false},
